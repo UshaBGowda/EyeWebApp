@@ -452,6 +452,192 @@ namespace EyeWebApp.EyeWebService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Therapy", Namespace="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses")]
+    [System.SerializableAttribute()]
+    public partial class Therapy : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string therapyDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int therapyIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string therapyNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string therapyDescription {
+            get {
+                return this.therapyDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.therapyDescriptionField, value) != true)) {
+                    this.therapyDescriptionField = value;
+                    this.RaisePropertyChanged("therapyDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int therapyId {
+            get {
+                return this.therapyIdField;
+            }
+            set {
+                if ((this.therapyIdField.Equals(value) != true)) {
+                    this.therapyIdField = value;
+                    this.RaisePropertyChanged("therapyId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string therapyName {
+            get {
+                return this.therapyNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.therapyNameField, value) != true)) {
+                    this.therapyNameField = value;
+                    this.RaisePropertyChanged("therapyName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Game", Namespace="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses")]
+    [System.SerializableAttribute()]
+    public partial class Game : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string gameDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int gameIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string gameNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int therapyIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string therapyNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string gameDescription {
+            get {
+                return this.gameDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gameDescriptionField, value) != true)) {
+                    this.gameDescriptionField = value;
+                    this.RaisePropertyChanged("gameDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int gameId {
+            get {
+                return this.gameIdField;
+            }
+            set {
+                if ((this.gameIdField.Equals(value) != true)) {
+                    this.gameIdField = value;
+                    this.RaisePropertyChanged("gameId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string gameName {
+            get {
+                return this.gameNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gameNameField, value) != true)) {
+                    this.gameNameField = value;
+                    this.RaisePropertyChanged("gameName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int therapyId {
+            get {
+                return this.therapyIdField;
+            }
+            set {
+                if ((this.therapyIdField.Equals(value) != true)) {
+                    this.therapyIdField = value;
+                    this.RaisePropertyChanged("therapyId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string therapyName {
+            get {
+                return this.therapyNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.therapyNameField, value) != true)) {
+                    this.therapyNameField = value;
+                    this.RaisePropertyChanged("therapyName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EyeWebService.EyeWebService")]
     public interface EyeWebService {
@@ -486,11 +672,11 @@ namespace EyeWebApp.EyeWebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetPatientProfile", ReplyAction="http://tempuri.org/EyeWebService/GetPatientProfileResponse")]
         System.Threading.Tasks.Task<EyeWebApp.EyeWebService.Patient> GetPatientProfileAsync(int patientId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListProviderProfiles", ReplyAction="http://tempuri.org/EyeWebService/ListProviderProfilesResponse")]
-        System.Collections.Generic.List<EyeWebApp.EyeWebService.user> ListProviderProfiles();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllProviderProfile", ReplyAction="http://tempuri.org/EyeWebService/ListAllProviderProfileResponse")]
+        System.Collections.Generic.List<EyeWebApp.EyeWebService.user> ListAllProviderProfile();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListProviderProfiles", ReplyAction="http://tempuri.org/EyeWebService/ListProviderProfilesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.user>> ListProviderProfilesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllProviderProfile", ReplyAction="http://tempuri.org/EyeWebService/ListAllProviderProfileResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.user>> ListAllProviderProfileAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/SetChildProfile", ReplyAction="http://tempuri.org/EyeWebService/SetChildProfileResponse")]
         EyeWebApp.EyeWebService.Patient SetChildProfile(EyeWebApp.EyeWebService.Patient newPatient);
@@ -504,11 +690,65 @@ namespace EyeWebApp.EyeWebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListPatientsProfile", ReplyAction="http://tempuri.org/EyeWebService/ListPatientsProfileResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.Patient>> ListPatientsProfileAsync(int providerId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteProfile", ReplyAction="http://tempuri.org/EyeWebService/DeleteProfileResponse")]
+        bool DeleteProfile(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteProfile", ReplyAction="http://tempuri.org/EyeWebService/DeleteProfileResponse")]
+        System.Threading.Tasks.Task<bool> DeleteProfileAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateTherapy", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateTherapyResponse")]
+        int CreateUpdateTherapy(EyeWebApp.EyeWebService.Therapy newTherapy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateTherapy", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateTherapyResponse")]
+        System.Threading.Tasks.Task<int> CreateUpdateTherapyAsync(EyeWebApp.EyeWebService.Therapy newTherapy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateGame", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateGameResponse")]
+        bool CreateUpdateGame(EyeWebApp.EyeWebService.Game newGame);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateGame", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateGameResponse")]
+        System.Threading.Tasks.Task<bool> CreateUpdateGameAsync(EyeWebApp.EyeWebService.Game newGame);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllTherapy", ReplyAction="http://tempuri.org/EyeWebService/ListAllTherapyResponse")]
+        System.Collections.Generic.List<EyeWebApp.EyeWebService.Therapy> ListAllTherapy();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllTherapy", ReplyAction="http://tempuri.org/EyeWebService/ListAllTherapyResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.Therapy>> ListAllTherapyAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllGamesForTherapy", ReplyAction="http://tempuri.org/EyeWebService/ListAllGamesForTherapyResponse")]
+        System.Collections.Generic.List<EyeWebApp.EyeWebService.Game> ListAllGamesForTherapy(int therapyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllGamesForTherapy", ReplyAction="http://tempuri.org/EyeWebService/ListAllGamesForTherapyResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.Game>> ListAllGamesForTherapyAsync(int therapyId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetUserProfile", ReplyAction="http://tempuri.org/EyeWebService/GetUserProfileResponse")]
         EyeWebApp.EyeWebService.user GetUserProfile(int userId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetUserProfile", ReplyAction="http://tempuri.org/EyeWebService/GetUserProfileResponse")]
         System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetUserProfileAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetParentProfile", ReplyAction="http://tempuri.org/EyeWebService/GetParentProfileResponse")]
+        EyeWebApp.EyeWebService.user GetParentProfile(int childId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetParentProfile", ReplyAction="http://tempuri.org/EyeWebService/GetParentProfileResponse")]
+        System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetParentProfileAsync(int childId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetProviderProfile", ReplyAction="http://tempuri.org/EyeWebService/GetProviderProfileResponse")]
+        EyeWebApp.EyeWebService.user GetProviderProfile(int patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/GetProviderProfile", ReplyAction="http://tempuri.org/EyeWebService/GetProviderProfileResponse")]
+        System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetProviderProfileAsync(int patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteGame", ReplyAction="http://tempuri.org/EyeWebService/DeleteGameResponse")]
+        bool DeleteGame(int gameId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteGame", ReplyAction="http://tempuri.org/EyeWebService/DeleteGameResponse")]
+        System.Threading.Tasks.Task<bool> DeleteGameAsync(int gameId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteTherapy", ReplyAction="http://tempuri.org/EyeWebService/DeleteTherapyResponse")]
+        bool DeleteTherapy(int therapyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteTherapy", ReplyAction="http://tempuri.org/EyeWebService/DeleteTherapyResponse")]
+        System.Threading.Tasks.Task<bool> DeleteTherapyAsync(int therapyId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -578,12 +818,12 @@ namespace EyeWebApp.EyeWebService {
             return base.Channel.GetPatientProfileAsync(patientId);
         }
         
-        public System.Collections.Generic.List<EyeWebApp.EyeWebService.user> ListProviderProfiles() {
-            return base.Channel.ListProviderProfiles();
+        public System.Collections.Generic.List<EyeWebApp.EyeWebService.user> ListAllProviderProfile() {
+            return base.Channel.ListAllProviderProfile();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.user>> ListProviderProfilesAsync() {
-            return base.Channel.ListProviderProfilesAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.user>> ListAllProviderProfileAsync() {
+            return base.Channel.ListAllProviderProfileAsync();
         }
         
         public EyeWebApp.EyeWebService.Patient SetChildProfile(EyeWebApp.EyeWebService.Patient newPatient) {
@@ -602,12 +842,84 @@ namespace EyeWebApp.EyeWebService {
             return base.Channel.ListPatientsProfileAsync(providerId);
         }
         
+        public bool DeleteProfile(int userId) {
+            return base.Channel.DeleteProfile(userId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteProfileAsync(int userId) {
+            return base.Channel.DeleteProfileAsync(userId);
+        }
+        
+        public int CreateUpdateTherapy(EyeWebApp.EyeWebService.Therapy newTherapy) {
+            return base.Channel.CreateUpdateTherapy(newTherapy);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateUpdateTherapyAsync(EyeWebApp.EyeWebService.Therapy newTherapy) {
+            return base.Channel.CreateUpdateTherapyAsync(newTherapy);
+        }
+        
+        public bool CreateUpdateGame(EyeWebApp.EyeWebService.Game newGame) {
+            return base.Channel.CreateUpdateGame(newGame);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateUpdateGameAsync(EyeWebApp.EyeWebService.Game newGame) {
+            return base.Channel.CreateUpdateGameAsync(newGame);
+        }
+        
+        public System.Collections.Generic.List<EyeWebApp.EyeWebService.Therapy> ListAllTherapy() {
+            return base.Channel.ListAllTherapy();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.Therapy>> ListAllTherapyAsync() {
+            return base.Channel.ListAllTherapyAsync();
+        }
+        
+        public System.Collections.Generic.List<EyeWebApp.EyeWebService.Game> ListAllGamesForTherapy(int therapyId) {
+            return base.Channel.ListAllGamesForTherapy(therapyId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EyeWebApp.EyeWebService.Game>> ListAllGamesForTherapyAsync(int therapyId) {
+            return base.Channel.ListAllGamesForTherapyAsync(therapyId);
+        }
+        
         public EyeWebApp.EyeWebService.user GetUserProfile(int userId) {
             return base.Channel.GetUserProfile(userId);
         }
         
         public System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetUserProfileAsync(int userId) {
             return base.Channel.GetUserProfileAsync(userId);
+        }
+        
+        public EyeWebApp.EyeWebService.user GetParentProfile(int childId) {
+            return base.Channel.GetParentProfile(childId);
+        }
+        
+        public System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetParentProfileAsync(int childId) {
+            return base.Channel.GetParentProfileAsync(childId);
+        }
+        
+        public EyeWebApp.EyeWebService.user GetProviderProfile(int patientId) {
+            return base.Channel.GetProviderProfile(patientId);
+        }
+        
+        public System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetProviderProfileAsync(int patientId) {
+            return base.Channel.GetProviderProfileAsync(patientId);
+        }
+        
+        public bool DeleteGame(int gameId) {
+            return base.Channel.DeleteGame(gameId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteGameAsync(int gameId) {
+            return base.Channel.DeleteGameAsync(gameId);
+        }
+        
+        public bool DeleteTherapy(int therapyId) {
+            return base.Channel.DeleteTherapy(therapyId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteTherapyAsync(int therapyId) {
+            return base.Channel.DeleteTherapyAsync(therapyId);
         }
     }
 }

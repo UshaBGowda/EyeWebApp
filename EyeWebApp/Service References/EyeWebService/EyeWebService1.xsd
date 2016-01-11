@@ -71,15 +71,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ListProviderProfiles">
+  <xs:element name="ListAllProviderProfile">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ListProviderProfilesResponse">
+  <xs:element name="ListAllProviderProfileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListProviderProfilesResult" nillable="true" type="q4:ArrayOfuser" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllProviderProfileResult" nillable="true" type="q4:ArrayOfuser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -111,6 +111,74 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DeleteProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteProfileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUpdateTherapy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="newTherapy" nillable="true" type="q8:Therapy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUpdateTherapyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUpdateTherapyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUpdateGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="newGame" nillable="true" type="q9:Game" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUpdateGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUpdateGameResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAllTherapy">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAllTherapyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllTherapyResult" nillable="true" type="q10:ArrayOfTherapy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAllGamesForTherapy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="therapyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAllGamesForTherapyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllGamesForTherapyResult" nillable="true" type="q11:ArrayOfGame" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetUserProfile">
     <xs:complexType>
       <xs:sequence>
@@ -121,7 +189,63 @@
   <xs:element name="GetUserProfileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="GetUserProfileResult" nillable="true" type="q8:user" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="GetUserProfileResult" nillable="true" type="q12:user" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="childId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="GetParentProfileResult" nillable="true" type="q13:user" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="GetProviderProfileResult" nillable="true" type="q14:user" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGameResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTherapy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="therapyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTherapyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTherapyResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

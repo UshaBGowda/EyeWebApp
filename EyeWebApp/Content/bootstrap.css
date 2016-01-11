@@ -4027,7 +4027,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   z-index: 1000;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  border: 0px  transparent;
 }
 
 .navbar:before,
@@ -4501,7 +4501,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #ffffff;
   border-color: #080808;
 }
 
@@ -4525,7 +4525,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #000000;
+    font-size: 15px;
+    font-weight: bold;
   background-color: transparent;
 }
 

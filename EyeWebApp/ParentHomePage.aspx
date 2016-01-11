@@ -1,6 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ParentHomePage.aspx.cs" Inherits="EyeWebApp.ParentHomePage" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <script src="/Content/JQGridReq/jquery-1.9.0.min.js" language="javascript" type="text/javascript"></script>
+    
+    <script src="/Content/JQGridReq/grid.locale-en.js" language="javascript" type="text/javascript"></script>
+    <script src="/Content/JQGridReq/jquery.jqGrid.js" language="javascript" type="text/javascript"></script>
+     <script src="/Scripts/PageScripts/ParentHomePage.js" language="javascript" type="text/javascript"></script>
     <style type="text/css">
         .hiddencol {
             display: none;
@@ -11,7 +16,7 @@
         <asp:Label ID="lblNoAccess" runat="server" Text="You are not authorized to access this page" Visible="false"></asp:Label>
     </div>
 
-    <div class="grid" style="overflow: auto; margin: 150px 50px 100px auto; height: 470px"
+    <%--<div class="grid" style="overflow: auto; margin: 150px 50px 100px auto; height: 470px"
         id="dvMaster" runat="server">
           <asp:Button ID="btnCreate" OnClick="AddPatientProfile" runat="server" Text="Add Child Profile" />
         <asp:GridView ID="gvChildern" runat="server" CssClass="results" AutoGenerateColumns="false"
@@ -77,8 +82,11 @@
         <asp:Button ID="btnCancel" OnClick="Cancel" runat="server" Text=" Cancel" Visible="True" />
         <asp:HiddenField runat="server" ID="hdnPatientId" />
         <asp:HiddenField runat="server" ID="hdnParentId" />
-        <asp:HiddenField runat="server" ID="hdnProviderId" />
-    </div>
-
+        <asp:HiddenField runat="server" ID="hdnProviderId" />--%>
+   <div class="grid" id="dvMaster" style="overflow: auto; margin: 150px 50px 100px auto;  height: 470px">
+    <table id="jQChildren">
+    </table>
+    <div id="pgrChildren">
+    </div></div>
 </asp:Content>
 

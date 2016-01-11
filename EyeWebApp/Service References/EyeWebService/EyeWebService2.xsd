@@ -55,4 +55,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfuser" nillable="true" type="tns:ArrayOfuser" />
+  <xs:complexType name="Therapy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="therapyDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="therapyId" type="xs:int" />
+      <xs:element minOccurs="0" name="therapyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Therapy" nillable="true" type="tns:Therapy" />
+  <xs:complexType name="Game">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gameDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gameId" type="xs:int" />
+      <xs:element minOccurs="0" name="gameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="therapyId" type="xs:int" />
+      <xs:element minOccurs="0" name="therapyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Game" nillable="true" type="tns:Game" />
+  <xs:complexType name="ArrayOfTherapy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Therapy" nillable="true" type="tns:Therapy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTherapy" nillable="true" type="tns:ArrayOfTherapy" />
+  <xs:complexType name="ArrayOfGame">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Game" nillable="true" type="tns:Game" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGame" nillable="true" type="tns:ArrayOfGame" />
 </xs:schema>
