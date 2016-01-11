@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -77,6 +78,40 @@ namespace EyeWebApp.Handlers
                     var provList = client.ListAllProviderProfile();
                                
                                 output = new JavaScriptSerializer().Serialize(provList);
+                    break;
+                case "getgenders":
+
+                    var dt = new DataTable();
+                    dt.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "genderId"
+
+                    });
+                    dt.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "gender"
+                    });
+                    DataRow drM = dt.NewRow();
+                    drM["genderId"] = "M";
+                    drM["gender"] = "Male";
+                    dt.Rows.Add(drM);
+                    
+                    DataRow drF = dt.NewRow();
+                    drF["genderId"] = "F";
+                    drF["gender"] = "Female";
+                    dt.Rows.Add(drF);
+                    List<Dictionary<String, Object>> tableRows = new List<Dictionary<String, Object>>();
+                    Dictionary<String, Object> row;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        row = new Dictionary<String, Object>();
+                        foreach (DataColumn col in dt.Columns)
+                        {
+                            row.Add(col.ColumnName, dr[col]);
+                        }
+                        tableRows.Add(row);
+                    }
+                    output = new JavaScriptSerializer().Serialize(tableRows);
                     break;
             }
             response.Write(output);

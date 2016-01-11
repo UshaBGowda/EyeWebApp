@@ -1,4 +1,18 @@
 ﻿$(document).ready(function () {
+    var initDateEdit = function (elem) {
+        setTimeout(function () {
+            $(elem).datepicker({
+                dateFormat: 'dd-M-yy',
+                autoSize: true,
+                showOn: 'button', 
+                changeYear: true,
+                changeMonth: true,
+                showButtonPanel: true,
+                showWeek: true
+            });
+        }, 100);
+    };
+
     var gridWidth = $("#dvMaster").width();
     $("#jQChildren").jqGrid({
         url: "Handlers/Parent.ashx?action=getChildren|",
@@ -7,14 +21,14 @@
         shrinkToFit: true,
         height: "auto",
         width: gridWidth - 100,
-        colNames: ["patientId", "parentId", "providerId","providerName", "First Name", "Last Name", "Date of Birth", "Gender"],
+        colNames: ["patientId", "parentId", "providerId","providerName", "First Name", "Last Name", "Date of Birth", "Gender","genderDdl"],
         colModel: [
             
             {
                 name: "patientId", search: false, hidden: true, editable: true,editrules: {edithidden: false}},
             { name: "parentId", search: false, hidden: true, editable: true, editrules: { edithidden: false } },
             {
-                name: "providerId", search: false, hidden: true, editable: true, editrules: { edithidden: false }
+                name: "providerId", search: false, hidden: true, editable: false, editrules: { edithidden: false }
             },
             {
                 name: "providerName",
@@ -31,7 +45,7 @@
                         if (t && t.length)
                             for (var a = 0, i = t.length; i > a; a++) {
                                 var o = t[a];
-                                d += '<option value="' + o.userId + '">' + o.firstName + " " + o.lastName + "</option>"
+                                d += '<option value="' + o.userId + '">' + o.firstName + " " + o.lastName + "</option>";
                             }
                         return d + "</select>";
                     }
@@ -39,8 +53,40 @@
             },
             { name: "firstName", search: true, hidden: false ,editable:true},
             { name: "lastName", search: false, hidden: false, editable: true },
-            { name: "dob", search: false, hidden: false, editable: true },
-            { name: "gender", search: false, hidden: false, editable: true }
+            {
+                name: "dob", search: false, hidden: false, editable: true ,
+                formatter: 'date',
+                formatoptions: {
+                    newformat: 'd-M-Y'
+                },
+                datefmt: 'd-M-Y',
+                editoptions: {
+                    dataInit: initDateEdit
+                }
+            },
+            { name: "gender", search: false, hidden: false, editable: false, editrules: { edithidden: true } },
+            {
+                name: "genderDdl",
+                editable: true,
+                sortable: false,
+                search: false,
+                hidden: true,
+                edittype: "select",
+                editrules: { edithidden: true },
+                editoptions: {
+                    dataUrl: "Handlers/Parent.ashx?action=getgenders|",
+                    buildSelect: function(e) {
+                        var t = jQuery.parseJSON(e),
+                            d = "<select>";
+                        if (t && t.length)
+                            for (var a = 0, i = t.length; i > a; a++) {
+                                var o = t[a];
+                                d += '<option value="' + o.genderId + '">' + o.gender + "</option>";
+                            }
+                        return d + "</select>";
+                    }
+                }
+            }
         ],
         editurl: "Handlers/Parent.ashx?action=putChildren|",
         search:true,
