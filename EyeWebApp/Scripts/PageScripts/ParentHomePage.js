@@ -2,13 +2,14 @@
     var initDateEdit = function (elem) {
         setTimeout(function () {
             $(elem).datepicker({
-                dateFormat: 'dd-M-yy',
                 autoSize: true,
-                showOn: 'button', 
                 changeYear: true,
                 changeMonth: true,
-                showButtonPanel: true,
-                showWeek: true
+                showButtonPanel: false,
+                showWeek: false,
+                minDate: "-100Y",
+                maxDate: 0,
+            yearRange: "-100:+0"
             });
         }, 100);
     };
@@ -55,13 +56,10 @@
             { name: "lastName", search: false, hidden: false, editable: true },
             {
                 name: "dob", search: false, hidden: false, editable: true ,
-                formatter: 'date',
-                formatoptions: {
-                    newformat: 'd-M-Y'
-                },
-                datefmt: 'd-M-Y',
+              
+         
                 editoptions: {
-                    dataInit: initDateEdit
+                    dataInit: initDateEdit, readonly: "readonly"
                 }
             },
             { name: "gender", search: false, hidden: false, editable: false, editrules: { edithidden: true } },

@@ -13,6 +13,7 @@
     
     <link href="/Content/JQGridReq/ui.jqgrid.css" rel="stylesheet" type="text/css" />
 
+
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>

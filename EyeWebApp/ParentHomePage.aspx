@@ -1,10 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ParentHomePage.aspx.cs" Inherits="EyeWebApp.ParentHomePage" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <script src="/Content/JQGridReq/jquery-1.9.0.min.js" language="javascript" type="text/javascript"></script>
+    
     
     <script src="/Content/JQGridReq/grid.locale-en.js" language="javascript" type="text/javascript"></script>
     <script src="/Content/JQGridReq/jquery.jqGrid.js" language="javascript" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.11.4.js" language="javascript" type="text/javascript"></script>
      <script src="/Scripts/PageScripts/ParentHomePage.js" language="javascript" type="text/javascript"></script>
     <style type="text/css">
         .hiddencol {
