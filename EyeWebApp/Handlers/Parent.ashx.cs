@@ -13,14 +13,13 @@ using Newtonsoft.Json;
 
 namespace EyeWebApp.Handlers
 {
-
-    class GridProperties<T>
+    partial class GridProperties<T>
     {
-        public List<T> rows { get; set; }
-        public int records { get; set; }
-        public int total { get; set; }
+        public List<T> Rows { get; set; }
+        public int Records { get; set; }
+        public int Total { get; set; }
 
-        public int page { get; set; }
+        public int Page { get; set; }
     }
 
     /// <summary>
@@ -34,7 +33,7 @@ namespace EyeWebApp.Handlers
             HttpRequest request = context.Request;
             string errMsg = "";
 
-            string[] qryStr = request.QueryString[0].ToString().ToLower().Split('|');
+            string[] qryStr = request.QueryString[0].ToLower().Split('|');
             HttpResponse response = context.Response;
 
             string _search = request["_search"];
@@ -49,8 +48,28 @@ namespace EyeWebApp.Handlers
             {
                 case "getchildren":
                      
-            List<Patient> patients=
+            var patients=
                 client.ListChildrenProfile(int.Parse(HttpContext.Current.Session["userId"].ToString()));
+            List<Dictionary<String, Object>> tableRowsChildren = new List<Dictionary<String, Object>>();
+                    Dictionary<String, Object> rowChildren;
+                    foreach (var dr in patients)
+                    {
+                        rowChildren = new Dictionary<String, Object>();
+                        rowChildren["patientId"] = dr.patientId;
+                        rowChildren["parentId"] = dr.parentId;
+                        rowChildren["providerId"] = dr.providerId;
+                        rowChildren["firstName"] = dr.firstName;
+                        rowChildren["lastName"] = dr.lastName;
+                        rowChildren["dob"] = dr.dob;
+                        rowChildren["gender"] = dr.gender;
+                        var providerProfile = client.GetUserProfile(dr.providerId);
+                        rowChildren["providerName"] = providerProfile.firstName+" "+providerProfile.lastName;
+                        tableRowsChildren.Add(rowChildren);
+                    }
+                    output = new JavaScriptSerializer().Serialize(tableRowsChildren);
+
+                    
+                    /*
                     output =JsonConvert.SerializeObject(new GridProperties<Patient>
                         {
                             rows = patients,
@@ -58,9 +77,9 @@ namespace EyeWebApp.Handlers
                             total = (patients.Count + Convert.ToInt32(numberOfRows) - 1)/Convert.ToInt32(numberOfRows),
                             page = Convert.ToInt32(pageIndex)
 
-                        });
+                        });*/
                     break;
-                case "putchildren":
+                case "editchildren":
                     XElement LookUp = new XElement("LookUp");
                             if (context.Request.RequestType.ToString().ToLower() == "post")
                             {
@@ -70,14 +89,38 @@ namespace EyeWebApp.Handlers
                                     LookUp.Add(new XElement(keys[i],context.Request.Form[(keys[i])].ToString()));
                                 }
                             }
-                    string str = LookUp.ToString();
-
+                            if ((string)LookUp.Element("oper") == "edit")
+                            {
+                                Patient editPatient = new Patient
+                                {
+                                    patientId = (int)LookUp.Element("patientId"),
+                                    parentId = (int)LookUp.Element("parentId"),
+                                    providerId = (int)LookUp.Element("providerNameDdl"),
+                                    firstName = (string)LookUp.Element("firstName"),
+                                    lastName = (string)LookUp.Element("lastName"),
+                                    gender = (string)LookUp.Element("genderDdl"),
+                                    dob = (string)LookUp.Element("dob")
+                                };
+                                client.SetChildProfile(editPatient);
+                            }
+                            else
+                            {
+                                Patient newPatient = new Patient
+                                {
+                                    parentId = int.Parse(HttpContext.Current.Session["userId"].ToString()),
+                                    providerId = (int)LookUp.Element("providerNameDdl"),
+                                    firstName = (string)LookUp.Element("firstName"),
+                                    lastName = (string)LookUp.Element("lastName"),
+                                    gender = (string)LookUp.Element("genderDdl"),
+                                    dob = (string)LookUp.Element("dob")
+                                };
+                                client.SetChildProfile(newPatient);
+                            }
                     break;
                 case "getproviders":
                     
                     var provList = client.ListAllProviderProfile();
-                               
-                                output = new JavaScriptSerializer().Serialize(provList);
+                    output = new JavaScriptSerializer().Serialize(provList);
                     break;
                 case "getgenders":
 
@@ -100,6 +143,12 @@ namespace EyeWebApp.Handlers
                     drF["genderId"] = "F";
                     drF["gender"] = "Female";
                     dt.Rows.Add(drF);
+
+                    DataRow drN = dt.NewRow();
+                    drN["genderId"] = "N";
+                    drN["gender"] = "Not specified";
+                    dt.Rows.Add(drN);
+
                     List<Dictionary<String, Object>> tableRows = new List<Dictionary<String, Object>>();
                     Dictionary<String, Object> row;
                     foreach (DataRow dr in dt.Rows)

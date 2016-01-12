@@ -181,6 +181,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Handlers\Parent.ashx" />
+    <Content Include="Handlers\Provider.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="ParentHomePage.aspx" />
     <Content Include="ProviderHomePage.aspx" />
@@ -193,6 +194,7 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\PageScripts\ParentHomePage.js" />
+    <Content Include="Scripts\PageScripts\ProviderHomePage.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\skel-viewport.min.js" />
@@ -408,6 +410,9 @@
     </Compile>
     <Compile Include="Handlers\Parent.ashx.cs">
       <DependentUpon>Parent.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Provider.ashx.cs">
+      <DependentUpon>Provider.ashx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ParentHomePage.aspx.cs">

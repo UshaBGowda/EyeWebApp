@@ -69,6 +69,20 @@ namespace EyeWebApp
         protected void Page_Load(object sender, EventArgs e)
         {
             liProfile.Visible = (HttpContext.Current.Session["userId"] != null);
+
+            if (HttpContext.Current.Session["userId"] != null)
+            {
+                myHomePage.Visible = true;
+
+                if (int.Parse(HttpContext.Current.Session["userTypeId"].ToString()) == 1)
+                {
+                    myHomePage.HRef="~/ProviderHomePage";
+                }
+                else if (int.Parse(HttpContext.Current.Session["userTypeId"].ToString()) == 2)
+                {
+                    myHomePage.HRef = "~/ParentHomePage";
+                }
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
