@@ -94,6 +94,7 @@ namespace EyeWebApp.Account
        {
            PopulateFields();
            SetVisibility(true);
+            ddlUserType.Enabled = false;
        }
         protected void ProfileSubmitButtonClick(object sender, EventArgs e)
         {
@@ -131,6 +132,8 @@ namespace EyeWebApp.Account
                 };
                 addList.Add(add1);
             }
+            if (HttpContext.Current.Session["userId"] != null)
+                newUser.userId = int.Parse(HttpContext.Current.Session["userId"].ToString());
 
             newUser.firstName = txtFName.Text;
             newUser.lastName = txtLName.Text;
@@ -145,6 +148,7 @@ namespace EyeWebApp.Account
             if (success)
             {
                 HttpContext.Current.Session["userId"] = client.GetUserId(newUser.loginId);
+                HttpContext.Current.Session["userTypeId"] = newUser.userTypeId;
 
                 IdentityHelper.RedirectToReturnUrl(
                     newUser.userTypeId == 1 ? "~/ProviderHomePage.aspx" : "~/ParentHomePage.aspx", Response);
