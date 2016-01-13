@@ -11,6 +11,7 @@
         .hiddencol {
             display: none;
         }
+ 
     </style>
     <div>
 
@@ -84,7 +85,7 @@
         <asp:HiddenField runat="server" ID="hdnPatientId" />
         <asp:HiddenField runat="server" ID="hdnParentId" />
         <asp:HiddenField runat="server" ID="hdnProviderId" />--%>
-   <div class="grid" id="dvMaster" style="overflow: auto; margin: 150px 50px 100px auto;  height: 470px">
+   <div class="grid" id="dvMaster" style="overflow: auto; margin: 150px 50px 100px 50px;  height: 470px">
     <table id="jQChildren">
     </table>
     <div id="pgrChildren">

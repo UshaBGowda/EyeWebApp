@@ -69,7 +69,6 @@
       <xs:element minOccurs="0" name="gameId" type="xs:int" />
       <xs:element minOccurs="0" name="gameName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="therapyId" type="xs:int" />
-      <xs:element minOccurs="0" name="therapyName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Game" nillable="true" type="tns:Game" />

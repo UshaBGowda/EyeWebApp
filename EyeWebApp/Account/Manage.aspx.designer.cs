@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Web.UI.WebControls;
-
 namespace EyeWebApp.Account {
     
     
@@ -21,7 +19,7 @@ namespace EyeWebApp.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected PlaceHolder successMessage;
+        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
         
         /// <summary>
         /// ChangePassword control.
@@ -30,7 +28,7 @@ namespace EyeWebApp.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected HyperLink ChangePassword;
+        protected global::System.Web.UI.WebControls.HyperLink ChangePassword;
         
         /// <summary>
         /// CreatePassword control.
@@ -39,15 +37,6 @@ namespace EyeWebApp.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected HyperLink CreatePassword;
-        
-        /// <summary>
-        /// PhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected Label PhoneNumber;
+        protected global::System.Web.UI.WebControls.HyperLink CreatePassword;
     }
 }

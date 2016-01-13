@@ -168,6 +168,10 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Logo.jpg" />
+    <Content Include="Content\Images\Slide1.jpg" />
+    <Content Include="Content\Images\Slide2.jpg" />
+    <Content Include="Content\Images\Text.jpg" />
     <Content Include="Content\JQGridReq\grid.locale-en.js" />
     <Content Include="Content\JQGridReq\jquery-ui-1.9.2.custom.css" />
     <Content Include="Content\JQGridReq\jquery.jqGrid.js" />
@@ -193,6 +197,7 @@
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\PageScripts\JavaScript1.js" />
     <Content Include="Scripts\PageScripts\ParentHomePage.js" />
     <Content Include="Scripts\PageScripts\ProviderHomePage.js" />
     <Content Include="Scripts\respond.js" />

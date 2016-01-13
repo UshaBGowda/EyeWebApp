@@ -77,10 +77,12 @@ namespace EyeWebApp
                 if (int.Parse(HttpContext.Current.Session["userTypeId"].ToString()) == 1)
                 {
                     myHomePage.HRef="~/ProviderHomePage";
+                    myHomePage.InnerText = "Provider Dashboard";
                 }
                 else if (int.Parse(HttpContext.Current.Session["userTypeId"].ToString()) == 2)
                 {
                     myHomePage.HRef = "~/ParentHomePage";
+                    myHomePage.InnerText = "Parent Dashboard";
                 }
             }
         }

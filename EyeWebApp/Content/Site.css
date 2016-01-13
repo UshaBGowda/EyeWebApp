@@ -37,3 +37,70 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+
+
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+
+
+
+div#slider { overflow: hidden;height: 450px; }
+div#slider figure img { width: 20%;  float: left;overflow: hidden;top: -100px;z-index: 99;}
+div#slider figure { 
+  position: relative;
+  width: 500%;
+   
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 10s slidy infinite; 
+}
+
+@-webkit-keyframes spinnerRotate
+{
+    from{-webkit-transform:rotateY(0deg);}
+    to{-webkit-transform:rotateY(360deg);}
+}
+@-moz-keyframes spinnerRotate
+{
+    from{-moz-transform:rotateY(0deg);}
+    to{-moz-transform:rotateY(360deg);}
+}
+@-ms-keyframes spinnerRotate
+{
+    from{-ms-transform:rotateY(0deg);}
+    to{-ms-transform:rotateY(360deg);}
+}
+
+
+
+#spin{
+    
+    
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinnerRotate;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinnerRotate;
+    -ms-animation-duration: 3s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+

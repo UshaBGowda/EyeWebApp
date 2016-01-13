@@ -61,6 +61,24 @@
   <wsdl:message name="EyeWebService_DeleteProfile_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProfileResponse" />
   </wsdl:message>
+  <wsdl:message name="EyeWebService_GetUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_GetUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_GetParentProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentProfile" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_GetParentProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_GetProviderProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderProfile" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_GetProviderProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderProfileResponse" />
+  </wsdl:message>
   <wsdl:message name="EyeWebService_CreateUpdateTherapy_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateUpdateTherapy" />
   </wsdl:message>
@@ -84,24 +102,6 @@
   </wsdl:message>
   <wsdl:message name="EyeWebService_ListAllGamesForTherapy_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListAllGamesForTherapyResponse" />
-  </wsdl:message>
-  <wsdl:message name="EyeWebService_GetUserProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserProfile" />
-  </wsdl:message>
-  <wsdl:message name="EyeWebService_GetUserProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserProfileResponse" />
-  </wsdl:message>
-  <wsdl:message name="EyeWebService_GetParentProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetParentProfile" />
-  </wsdl:message>
-  <wsdl:message name="EyeWebService_GetParentProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetParentProfileResponse" />
-  </wsdl:message>
-  <wsdl:message name="EyeWebService_GetProviderProfile_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetProviderProfile" />
-  </wsdl:message>
-  <wsdl:message name="EyeWebService_GetProviderProfile_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetProviderProfileResponse" />
   </wsdl:message>
   <wsdl:message name="EyeWebService_DeleteGame_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteGame" />
@@ -152,6 +152,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/DeleteProfile" message="tns:EyeWebService_DeleteProfile_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/DeleteProfileResponse" message="tns:EyeWebService_DeleteProfile_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/GetUserProfile" message="tns:EyeWebService_GetUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/GetUserProfileResponse" message="tns:EyeWebService_GetUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/GetParentProfile" message="tns:EyeWebService_GetParentProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/GetParentProfileResponse" message="tns:EyeWebService_GetParentProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/GetProviderProfile" message="tns:EyeWebService_GetProviderProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/GetProviderProfileResponse" message="tns:EyeWebService_GetProviderProfile_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CreateUpdateTherapy">
       <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/CreateUpdateTherapy" message="tns:EyeWebService_CreateUpdateTherapy_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/CreateUpdateTherapyResponse" message="tns:EyeWebService_CreateUpdateTherapy_OutputMessage" />
@@ -167,18 +179,6 @@
     <wsdl:operation name="ListAllGamesForTherapy">
       <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/ListAllGamesForTherapy" message="tns:EyeWebService_ListAllGamesForTherapy_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/ListAllGamesForTherapyResponse" message="tns:EyeWebService_ListAllGamesForTherapy_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetUserProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/GetUserProfile" message="tns:EyeWebService_GetUserProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/GetUserProfileResponse" message="tns:EyeWebService_GetUserProfile_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetParentProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/GetParentProfile" message="tns:EyeWebService_GetParentProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/GetParentProfileResponse" message="tns:EyeWebService_GetParentProfile_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetProviderProfile">
-      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/GetProviderProfile" message="tns:EyeWebService_GetProviderProfile_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/GetProviderProfileResponse" message="tns:EyeWebService_GetProviderProfile_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteGame">
       <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/DeleteGame" message="tns:EyeWebService_DeleteGame_InputMessage" />
@@ -272,6 +272,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/GetUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentProfile">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/GetParentProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderProfile">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/GetProviderProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateUpdateTherapy">
       <soap:operation soapAction="http://tempuri.org/EyeWebService/CreateUpdateTherapy" style="document" />
       <wsdl:input>
@@ -301,33 +328,6 @@
     </wsdl:operation>
     <wsdl:operation name="ListAllGamesForTherapy">
       <soap:operation soapAction="http://tempuri.org/EyeWebService/ListAllGamesForTherapy" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetUserProfile">
-      <soap:operation soapAction="http://tempuri.org/EyeWebService/GetUserProfile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetParentProfile">
-      <soap:operation soapAction="http://tempuri.org/EyeWebService/GetParentProfile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetProviderProfile">
-      <soap:operation soapAction="http://tempuri.org/EyeWebService/GetProviderProfile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

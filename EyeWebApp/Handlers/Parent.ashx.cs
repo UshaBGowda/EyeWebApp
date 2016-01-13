@@ -111,7 +111,7 @@ namespace EyeWebApp.Handlers
                                     providerId = (int)LookUp.Element("providerNameDdl"),
                                     firstName = (string)LookUp.Element("firstName"),
                                     lastName = (string)LookUp.Element("lastName"),
-                                    gender = (string)LookUp.Element("genderDdl"),
+                                    gender = (string)LookUp.Element("genderDdl") ,
                                     dob = (string)LookUp.Element("dob")
                                 };
                                 client.SetChildProfile(newPatient);
