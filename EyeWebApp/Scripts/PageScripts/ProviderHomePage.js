@@ -6,6 +6,7 @@
 
         datatype: "json",
         shrinkToFit: true,
+        loadonce: true,
         height: "auto",
         width: gridWidth - 100,
         colNames: ["patientId", "parentId", "providerId", "First Name", "Last Name", "Date of Birth", "Gender", "Parent Name"],
@@ -35,5 +36,10 @@
                     multipleSearch: false, multipleGroup: false
                     , showQuery: false
                 });
+    jQuery("#refresh_jQPatients").click(function () {
+        jQuery("#jQPatients").setGridParam({ datatype: 'json' });
+        jQuery("#jQPatients").trigger("reloadGrid");
+    });
+
 
 });
