@@ -150,9 +150,17 @@ namespace EyeWebApp.Account
                 HttpContext.Current.Session["userId"] = client.GetUserId(newUser.loginId);
                 HttpContext.Current.Session["userTypeId"] = newUser.userTypeId;
 
-                IdentityHelper.RedirectToReturnUrl(
-                    newUser.userTypeId == 1 ? "~/ProviderHomePage.aspx" : "~/ParentHomePage.aspx", Response);
+               // IdentityHelper.RedirectToReturnUrl(
+                  //  newUser.userTypeId == 1 ? "~/ProviderHomePage.aspx" : "~/ParentHomePage.aspx", Response);
+                PopulateFields();
+                SetVisibility(false);
             }
+        }
+
+        protected void CancelButtonClick(object sender, EventArgs e)
+        {
+            PopulateFields();
+            SetVisibility(false);
         }
     }
 }

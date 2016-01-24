@@ -115,6 +115,30 @@
   <wsdl:message name="EyeWebService_DeleteTherapy_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteTherapyResponse" />
   </wsdl:message>
+  <wsdl:message name="EyeWebService_ListGameScoresForPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListGameScoresForPatient" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_ListGameScoresForPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListGameScoresForPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_ListGameAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListGameAssignment" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_ListGameAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListGameAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_SetGameAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetGameAssignment" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_SetGameAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetGameAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_DeleteGameAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGameAssignment" />
+  </wsdl:message>
+  <wsdl:message name="EyeWebService_DeleteGameAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGameAssignmentResponse" />
+  </wsdl:message>
   <wsdl:portType name="EyeWebService">
     <wsdl:operation name="SetProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/SetProfile" message="tns:EyeWebService_SetProfile_InputMessage" />
@@ -187,6 +211,22 @@
     <wsdl:operation name="DeleteTherapy">
       <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/DeleteTherapy" message="tns:EyeWebService_DeleteTherapy_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/DeleteTherapyResponse" message="tns:EyeWebService_DeleteTherapy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListGameScoresForPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/ListGameScoresForPatient" message="tns:EyeWebService_ListGameScoresForPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/ListGameScoresForPatientResponse" message="tns:EyeWebService_ListGameScoresForPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListGameAssignment">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/ListGameAssignment" message="tns:EyeWebService_ListGameAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/ListGameAssignmentResponse" message="tns:EyeWebService_ListGameAssignment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGameAssignment">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/SetGameAssignment" message="tns:EyeWebService_SetGameAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/SetGameAssignmentResponse" message="tns:EyeWebService_SetGameAssignment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGameAssignment">
+      <wsdl:input wsaw:Action="http://tempuri.org/EyeWebService/DeleteGameAssignment" message="tns:EyeWebService_DeleteGameAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EyeWebService/DeleteGameAssignmentResponse" message="tns:EyeWebService_DeleteGameAssignment_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_EyeWebService" type="tns:EyeWebService">
@@ -346,6 +386,42 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteTherapy">
       <soap:operation soapAction="http://tempuri.org/EyeWebService/DeleteTherapy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGameScoresForPatient">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/ListGameScoresForPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGameAssignment">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/ListGameAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGameAssignment">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/SetGameAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGameAssignment">
+      <soap:operation soapAction="http://tempuri.org/EyeWebService/DeleteGameAssignment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

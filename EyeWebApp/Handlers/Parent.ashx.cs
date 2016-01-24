@@ -80,26 +80,26 @@ namespace EyeWebApp.Handlers
                         });*/
                     break;
                 case "editchildren":
-                    XElement LookUp = new XElement("LookUp");
+                    XElement patientEntity = new XElement("patientEntity");
                             if (context.Request.RequestType.ToString().ToLower() == "post")
                             {
                                 string[] keys = context.Request.Form.AllKeys;
                                 for (int i = 0; i < keys.Length; i++)
                                 {
-                                    LookUp.Add(new XElement(keys[i],context.Request.Form[(keys[i])].ToString()));
+                                    patientEntity.Add(new XElement(keys[i],context.Request.Form[(keys[i])].ToString()));
                                 }
                             }
-                            if ((string)LookUp.Element("oper") == "edit")
+                            if ((string)patientEntity.Element("oper") == "edit")
                             {
                                 Patient editPatient = new Patient
                                 {
-                                    patientId = (int)LookUp.Element("patientId"),
-                                    parentId = (int)LookUp.Element("parentId"),
-                                    providerId = (int)LookUp.Element("providerNameDdl"),
-                                    firstName = (string)LookUp.Element("firstName"),
-                                    lastName = (string)LookUp.Element("lastName"),
-                                    gender = (string)LookUp.Element("genderDdl"),
-                                    dob = (string)LookUp.Element("dob")
+                                    patientId = (int)patientEntity.Element("patientId"),
+                                    parentId = (int)patientEntity.Element("parentId"),
+                                    providerId = (int)patientEntity.Element("providerNameDdl"),
+                                    firstName = (string)patientEntity.Element("firstName"),
+                                    lastName = (string)patientEntity.Element("lastName"),
+                                    gender = (string)patientEntity.Element("genderDdl"),
+                                    dob = (string)patientEntity.Element("dob")
                                 };
                                 client.SetChildProfile(editPatient);
                             }
@@ -108,11 +108,11 @@ namespace EyeWebApp.Handlers
                                 Patient newPatient = new Patient
                                 {
                                     parentId = int.Parse(HttpContext.Current.Session["userId"].ToString()),
-                                    providerId = (int)LookUp.Element("providerNameDdl"),
-                                    firstName = (string)LookUp.Element("firstName"),
-                                    lastName = (string)LookUp.Element("lastName"),
-                                    gender = (string)LookUp.Element("genderDdl") ,
-                                    dob = (string)LookUp.Element("dob")
+                                    providerId = (int)patientEntity.Element("providerNameDdl"),
+                                    firstName = (string)patientEntity.Element("firstName"),
+                                    lastName = (string)patientEntity.Element("lastName"),
+                                    gender = (string)patientEntity.Element("genderDdl") ,
+                                    dob = (string)patientEntity.Element("dob")
                                 };
                                 client.SetChildProfile(newPatient);
                             }

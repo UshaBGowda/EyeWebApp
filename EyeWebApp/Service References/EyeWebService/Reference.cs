@@ -548,7 +548,7 @@ namespace EyeWebApp.EyeWebService {
         private string gameNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int therapyIdField;
+        private EyeWebApp.EyeWebService.Therapy therapyField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -600,14 +600,338 @@ namespace EyeWebApp.EyeWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int therapyId {
+        public EyeWebApp.EyeWebService.Therapy therapy {
             get {
-                return this.therapyIdField;
+                return this.therapyField;
             }
             set {
-                if ((this.therapyIdField.Equals(value) != true)) {
-                    this.therapyIdField = value;
-                    this.RaisePropertyChanged("therapyId");
+                if ((object.ReferenceEquals(this.therapyField, value) != true)) {
+                    this.therapyField = value;
+                    this.RaisePropertyChanged("therapy");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PatientGameScore", Namespace="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses")]
+    [System.SerializableAttribute()]
+    public partial class PatientGameScore : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EyeWebApp.EyeWebService.Game gameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<EyeWebApp.EyeWebService.GameScore> gameScoreListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int levelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int patientIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EyeWebApp.EyeWebService.Game game {
+            get {
+                return this.gameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gameField, value) != true)) {
+                    this.gameField = value;
+                    this.RaisePropertyChanged("game");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<EyeWebApp.EyeWebService.GameScore> gameScoreList {
+            get {
+                return this.gameScoreListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gameScoreListField, value) != true)) {
+                    this.gameScoreListField = value;
+                    this.RaisePropertyChanged("gameScoreList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int level {
+            get {
+                return this.levelField;
+            }
+            set {
+                if ((this.levelField.Equals(value) != true)) {
+                    this.levelField = value;
+                    this.RaisePropertyChanged("level");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int patientId {
+            get {
+                return this.patientIdField;
+            }
+            set {
+                if ((this.patientIdField.Equals(value) != true)) {
+                    this.patientIdField = value;
+                    this.RaisePropertyChanged("patientId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GameScore", Namespace="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses")]
+    [System.SerializableAttribute()]
+    public partial class GameScore : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string datePlayedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan durationInMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int scoreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string datePlayed {
+            get {
+                return this.datePlayedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.datePlayedField, value) != true)) {
+                    this.datePlayedField = value;
+                    this.RaisePropertyChanged("datePlayed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan durationInMin {
+            get {
+                return this.durationInMinField;
+            }
+            set {
+                if ((this.durationInMinField.Equals(value) != true)) {
+                    this.durationInMinField = value;
+                    this.RaisePropertyChanged("durationInMin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int score {
+            get {
+                return this.scoreField;
+            }
+            set {
+                if ((this.scoreField.Equals(value) != true)) {
+                    this.scoreField = value;
+                    this.RaisePropertyChanged("score");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PatientGames", Namespace="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses")]
+    [System.SerializableAttribute()]
+    public partial class PatientGames : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<EyeWebApp.EyeWebService.GameAssignment> gameAssignmentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int patientIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<EyeWebApp.EyeWebService.GameAssignment> gameAssignments {
+            get {
+                return this.gameAssignmentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gameAssignmentsField, value) != true)) {
+                    this.gameAssignmentsField = value;
+                    this.RaisePropertyChanged("gameAssignments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int patientId {
+            get {
+                return this.patientIdField;
+            }
+            set {
+                if ((this.patientIdField.Equals(value) != true)) {
+                    this.patientIdField = value;
+                    this.RaisePropertyChanged("patientId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GameAssignment", Namespace="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses")]
+    [System.SerializableAttribute()]
+    public partial class GameAssignment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string endDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EyeWebApp.EyeWebService.Game gameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int levelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string startDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string endDate {
+            get {
+                return this.endDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.endDateField, value) != true)) {
+                    this.endDateField = value;
+                    this.RaisePropertyChanged("endDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EyeWebApp.EyeWebService.Game game {
+            get {
+                return this.gameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.gameField, value) != true)) {
+                    this.gameField = value;
+                    this.RaisePropertyChanged("game");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int level {
+            get {
+                return this.levelField;
+            }
+            set {
+                if ((this.levelField.Equals(value) != true)) {
+                    this.levelField = value;
+                    this.RaisePropertyChanged("level");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string startDate {
+            get {
+                return this.startDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.startDateField, value) != true)) {
+                    this.startDateField = value;
+                    this.RaisePropertyChanged("startDate");
                 }
             }
         }
@@ -699,16 +1023,16 @@ namespace EyeWebApp.EyeWebService {
         System.Threading.Tasks.Task<EyeWebApp.EyeWebService.user> GetProviderProfileAsync(int patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateTherapy", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateTherapyResponse")]
-        int CreateUpdateTherapy(EyeWebApp.EyeWebService.Therapy newTherapy);
+        bool CreateUpdateTherapy(EyeWebApp.EyeWebService.Therapy newTherapy);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateTherapy", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateTherapyResponse")]
-        System.Threading.Tasks.Task<int> CreateUpdateTherapyAsync(EyeWebApp.EyeWebService.Therapy newTherapy);
+        System.Threading.Tasks.Task<bool> CreateUpdateTherapyAsync(EyeWebApp.EyeWebService.Therapy newTherapy);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateGame", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateGameResponse")]
-        int CreateUpdateGame(EyeWebApp.EyeWebService.Game newGame);
+        EyeWebApp.EyeWebService.Game CreateUpdateGame(EyeWebApp.EyeWebService.Game newGame);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/CreateUpdateGame", ReplyAction="http://tempuri.org/EyeWebService/CreateUpdateGameResponse")]
-        System.Threading.Tasks.Task<int> CreateUpdateGameAsync(EyeWebApp.EyeWebService.Game newGame);
+        System.Threading.Tasks.Task<EyeWebApp.EyeWebService.Game> CreateUpdateGameAsync(EyeWebApp.EyeWebService.Game newGame);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListAllTherapy", ReplyAction="http://tempuri.org/EyeWebService/ListAllTherapyResponse")]
         System.Collections.Generic.List<EyeWebApp.EyeWebService.Therapy> ListAllTherapy();
@@ -733,6 +1057,30 @@ namespace EyeWebApp.EyeWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteTherapy", ReplyAction="http://tempuri.org/EyeWebService/DeleteTherapyResponse")]
         System.Threading.Tasks.Task<bool> DeleteTherapyAsync(int therapyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListGameScoresForPatient", ReplyAction="http://tempuri.org/EyeWebService/ListGameScoresForPatientResponse")]
+        EyeWebApp.EyeWebService.PatientGameScore ListGameScoresForPatient(EyeWebApp.EyeWebService.PatientGameScore patientGameScore);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListGameScoresForPatient", ReplyAction="http://tempuri.org/EyeWebService/ListGameScoresForPatientResponse")]
+        System.Threading.Tasks.Task<EyeWebApp.EyeWebService.PatientGameScore> ListGameScoresForPatientAsync(EyeWebApp.EyeWebService.PatientGameScore patientGameScore);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListGameAssignment", ReplyAction="http://tempuri.org/EyeWebService/ListGameAssignmentResponse")]
+        EyeWebApp.EyeWebService.PatientGames ListGameAssignment(int patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/ListGameAssignment", ReplyAction="http://tempuri.org/EyeWebService/ListGameAssignmentResponse")]
+        System.Threading.Tasks.Task<EyeWebApp.EyeWebService.PatientGames> ListGameAssignmentAsync(int patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/SetGameAssignment", ReplyAction="http://tempuri.org/EyeWebService/SetGameAssignmentResponse")]
+        bool SetGameAssignment(EyeWebApp.EyeWebService.PatientGames patientGames);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/SetGameAssignment", ReplyAction="http://tempuri.org/EyeWebService/SetGameAssignmentResponse")]
+        System.Threading.Tasks.Task<bool> SetGameAssignmentAsync(EyeWebApp.EyeWebService.PatientGames patientGames);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteGameAssignment", ReplyAction="http://tempuri.org/EyeWebService/DeleteGameAssignmentResponse")]
+        bool DeleteGameAssignment(EyeWebApp.EyeWebService.PatientGames patientGames);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EyeWebService/DeleteGameAssignment", ReplyAction="http://tempuri.org/EyeWebService/DeleteGameAssignmentResponse")]
+        System.Threading.Tasks.Task<bool> DeleteGameAssignmentAsync(EyeWebApp.EyeWebService.PatientGames patientGames);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -858,19 +1206,19 @@ namespace EyeWebApp.EyeWebService {
             return base.Channel.GetProviderProfileAsync(patientId);
         }
         
-        public int CreateUpdateTherapy(EyeWebApp.EyeWebService.Therapy newTherapy) {
+        public bool CreateUpdateTherapy(EyeWebApp.EyeWebService.Therapy newTherapy) {
             return base.Channel.CreateUpdateTherapy(newTherapy);
         }
         
-        public System.Threading.Tasks.Task<int> CreateUpdateTherapyAsync(EyeWebApp.EyeWebService.Therapy newTherapy) {
+        public System.Threading.Tasks.Task<bool> CreateUpdateTherapyAsync(EyeWebApp.EyeWebService.Therapy newTherapy) {
             return base.Channel.CreateUpdateTherapyAsync(newTherapy);
         }
         
-        public int CreateUpdateGame(EyeWebApp.EyeWebService.Game newGame) {
+        public EyeWebApp.EyeWebService.Game CreateUpdateGame(EyeWebApp.EyeWebService.Game newGame) {
             return base.Channel.CreateUpdateGame(newGame);
         }
         
-        public System.Threading.Tasks.Task<int> CreateUpdateGameAsync(EyeWebApp.EyeWebService.Game newGame) {
+        public System.Threading.Tasks.Task<EyeWebApp.EyeWebService.Game> CreateUpdateGameAsync(EyeWebApp.EyeWebService.Game newGame) {
             return base.Channel.CreateUpdateGameAsync(newGame);
         }
         
@@ -904,6 +1252,38 @@ namespace EyeWebApp.EyeWebService {
         
         public System.Threading.Tasks.Task<bool> DeleteTherapyAsync(int therapyId) {
             return base.Channel.DeleteTherapyAsync(therapyId);
+        }
+        
+        public EyeWebApp.EyeWebService.PatientGameScore ListGameScoresForPatient(EyeWebApp.EyeWebService.PatientGameScore patientGameScore) {
+            return base.Channel.ListGameScoresForPatient(patientGameScore);
+        }
+        
+        public System.Threading.Tasks.Task<EyeWebApp.EyeWebService.PatientGameScore> ListGameScoresForPatientAsync(EyeWebApp.EyeWebService.PatientGameScore patientGameScore) {
+            return base.Channel.ListGameScoresForPatientAsync(patientGameScore);
+        }
+        
+        public EyeWebApp.EyeWebService.PatientGames ListGameAssignment(int patientId) {
+            return base.Channel.ListGameAssignment(patientId);
+        }
+        
+        public System.Threading.Tasks.Task<EyeWebApp.EyeWebService.PatientGames> ListGameAssignmentAsync(int patientId) {
+            return base.Channel.ListGameAssignmentAsync(patientId);
+        }
+        
+        public bool SetGameAssignment(EyeWebApp.EyeWebService.PatientGames patientGames) {
+            return base.Channel.SetGameAssignment(patientGames);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SetGameAssignmentAsync(EyeWebApp.EyeWebService.PatientGames patientGames) {
+            return base.Channel.SetGameAssignmentAsync(patientGames);
+        }
+        
+        public bool DeleteGameAssignment(EyeWebApp.EyeWebService.PatientGames patientGames) {
+            return base.Channel.DeleteGameAssignment(patientGames);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteGameAssignmentAsync(EyeWebApp.EyeWebService.PatientGames patientGames) {
+            return base.Channel.DeleteGameAssignmentAsync(patientGames);
         }
     }
 }

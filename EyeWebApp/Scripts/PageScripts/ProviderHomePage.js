@@ -35,11 +35,29 @@
                 {}, {}, {}, {
                     multipleSearch: false, multipleGroup: false
                     , showQuery: false
-                });
+                }).jqGrid('navButtonAdd', '#pgrPatients',
+    {
+        caption: "Show"/*"Show"*/, buttonicon: "ui-icon-extlink", title: "Show Link",
+        onClickButton: function () {
+            var grid = $("#jQPatients");
+            var rowid = grid.jqGrid('getGridParam', 'selrow');
+            var url = "/PatientDetails?id=";
+            window.location = url + grid.jqGrid('getCell', rowid, 'patientId');
+        }
+    });
     jQuery("#refresh_jQPatients").click(function () {
         jQuery("#jQPatients").setGridParam({ datatype: 'json' });
         jQuery("#jQPatients").trigger("reloadGrid");
     });
 
+    //$("#jQPatients").jqGrid('navButtonAdd', '#pgrPatients',
+    //{
+    //    caption: "Show"/*"Show"*/, buttonicon: "ui-icon-extlink", title: "Show Link",
+    //    onClickButton: function () {
+    //        var grid = $("#jQPatients");
+    //        var rowid = grid.jqGrid('getGridParam', 'selrow');
+    //        window.location = grid.jqGrid('getCell', rowid, 'dataUrl');
+    //    }
+    //});
 
 });

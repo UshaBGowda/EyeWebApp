@@ -9,6 +9,7 @@
         <div>
             <asp:Button ID="btnEditProfile" runat="server" runat="server" Text="Edit Profile" OnClick="ProfileEditButtonClick" />
             <asp:Button ID="btnSubmitProfile" runat="server" Text="Submit" OnClick="ProfileSubmitButtonClick" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="CancelButtonClick" />
         </div>
         <asp:Table runat="server">
             <asp:TableRow>

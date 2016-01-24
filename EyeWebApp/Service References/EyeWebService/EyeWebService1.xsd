@@ -177,7 +177,7 @@
   <xs:element name="CreateUpdateTherapyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CreateUpdateTherapyResult" type="xs:int" />
+        <xs:element minOccurs="0" name="CreateUpdateTherapyResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -191,7 +191,7 @@
   <xs:element name="CreateUpdateGameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CreateUpdateGameResult" type="xs:int" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="CreateUpdateGameResult" nillable="true" type="q13:Game" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -203,7 +203,7 @@
   <xs:element name="ListAllTherapyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllTherapyResult" nillable="true" type="q13:ArrayOfTherapy" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllTherapyResult" nillable="true" type="q14:ArrayOfTherapy" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -217,7 +217,7 @@
   <xs:element name="ListAllGamesForTherapyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllGamesForTherapyResult" nillable="true" type="q14:ArrayOfGame" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListAllGamesForTherapyResult" nillable="true" type="q15:ArrayOfGame" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,6 +246,62 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="DeleteTherapyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListGameScoresForPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="patientGameScore" nillable="true" type="q16:PatientGameScore" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListGameScoresForPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListGameScoresForPatientResult" nillable="true" type="q17:PatientGameScore" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListGameAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListGameAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="ListGameAssignmentResult" nillable="true" type="q18:PatientGames" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGameAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="patientGames" nillable="true" type="q19:PatientGames" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGameAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetGameAssignmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGameAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EyeWebService.UtilClasses" minOccurs="0" name="patientGames" nillable="true" type="q20:PatientGames" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGameAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGameAssignmentResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

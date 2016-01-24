@@ -186,11 +186,15 @@
     <Content Include="Account\Web.config" />
     <Content Include="Handlers\Parent.ashx" />
     <Content Include="Handlers\Provider.ashx" />
+    <Content Include="Handlers\PatientDetails.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="ParentHomePage.aspx" />
+    <Content Include="PatientDetails.aspx" />
     <Content Include="ProviderHomePage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
@@ -199,6 +203,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\PageScripts\JavaScript1.js" />
     <Content Include="Scripts\PageScripts\ParentHomePage.js" />
+    <Content Include="Scripts\PageScripts\PatientDetails.js" />
     <Content Include="Scripts\PageScripts\ProviderHomePage.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -242,6 +247,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\EyeWebService\EyeWebApp.EyeWebService.Therapy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EyeWebService\EyeWebApp.EyeWebService.PatientGames.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EyeWebService\EyeWebApp.EyeWebService.PatientGameScore.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\EyeWebService\Reference.svcmap">
@@ -416,6 +427,9 @@
     <Compile Include="Handlers\Parent.ashx.cs">
       <DependentUpon>Parent.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\PatientDetails.ashx.cs">
+      <DependentUpon>PatientDetails.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handlers\Provider.ashx.cs">
       <DependentUpon>Provider.ashx</DependentUpon>
     </Compile>
@@ -426,6 +440,13 @@
     </Compile>
     <Compile Include="ParentHomePage.aspx.designer.cs">
       <DependentUpon>ParentHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetails.aspx.cs">
+      <DependentUpon>PatientDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientDetails.aspx.designer.cs">
+      <DependentUpon>PatientDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderHomePage.aspx.cs">
